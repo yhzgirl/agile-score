@@ -14,7 +14,7 @@
 }
 html,body{width:100%;height:100%;background:var(--bg);font-family:var(--font);color:var(--text);overflow:hidden;-webkit-font-smoothing:antialiased;}
 #deck{width:100vw;height:100vh;position:relative;overflow:hidden;}
-.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:6vh 8vw;opacity:0;transform:translateY(20px);transition:opacity .38s cubic-bezier(.4,0,.2,1),transform .38s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:1;}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:6vh 8vw;opacity:0;transform:translateY(20px);transition:opacity .38s cubic-bezier(.4,0,.2,1),transform .38s cubic-bezier(.4,0,.2,1);}
 .slide.active{opacity:1;transform:translateY(0);pointer-events:all;z-index:2;}
 .slide.out{opacity:0;transform:translateY(-20px);}
 #counter{position:fixed;top:28px;right:72px;font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--text-subtle);z-index:100;}
@@ -113,8 +113,8 @@ html,body{width:100%;height:100%;background:var(--bg);font-family:var(--font);co
   <div class="slide">
     <div class="l-statement">
       <div class="eyebrow">The Formula</div>
-      <h1 class="big" style="font-size:clamp(40px,6vw,80px);margin-bottom:20px;">Value \÷ Effort \× <em class="hl">RS</em> = Score</h1>
-      <p class="sub">Value and Effort are scored 1\–5. RS is a regulatory multiplier tied to the deadline field in the ticket. No RS? Default is 1.</p>
+      <h1 class="big" style="font-size:clamp(40px,6vw,80px);margin-bottom:20px;">Value ÷ Effort × <em class="hl">RS</em> = Score</h1>
+      <p class="sub">Value and Effort are scored 1–5. RS is a regulatory multiplier tied to the deadline field in the ticket. No RS? Default is 1.</p>
     </div>
   </div>
 
@@ -124,7 +124,7 @@ html,body{width:100%;height:100%;background:var(--bg);font-family:var(--font);co
       <div>
         <div class="eyebrow">Stakeholder Scoring</div>
         <h2 class="big">Value<br><em class="hl">Scale</em></h2>
-        <p class="desc">A straight 1\–4 scale. Different from the effort scale deliberately, so the two don't get confused. It's a judgement call, not a calculation.</p>
+        <p class="desc">A straight 1–4 scale. Different from the effort scale deliberately, so the two don't get confused. It's a judgement call, not a calculation.</p>
       </div>
       <div class="feat-list">
         <div class="feat">
@@ -192,13 +192,13 @@ html,body{width:100%;height:100%;background:var(--bg);font-family:var(--font);co
           <div class="c-body">Not regulatory. Score is driven entirely by value and effort.</div>
         </div>
         <div class="card">
-          <div class="c-label">Deadline &gt; 6 months</div>
-          <div class="c-title">RS = 3 \× Effort</div>
+          <div class="c-label">Deadline > 6 months</div>
+          <div class="c-title">RS = 3 × Effort</div>
           <div class="c-body">On the radar. Regulatory weight starts to influence priority.</div>
         </div>
         <div class="card">
           <div class="c-label">Deadline within 6 months</div>
-          <div class="c-title">RS = 5 \× Effort</div>
+          <div class="c-title">RS = 5 × Effort</div>
           <div class="c-body">Getting close. Regulatory work moves up the order.</div>
         </div>
         <div class="card hi">
@@ -243,7 +243,7 @@ html,body{width:100%;height:100%;background:var(--bg);font-family:var(--font);co
   function next(){if(cur<total-1)go(cur+1);}
   function prev(){if(cur>0)go(cur-1);}
   document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')next();if(e.key==='ArrowLeft'||e.key==='ArrowUp')prev();if(e.key==='f'||e.key==='F')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();});
-  let tx=0;document.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)dx>0?next():prev();},{passive:true});
+  let tx=0;document.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)dx>0?next():prev();});
   updateUI();
 })();
 </script>
